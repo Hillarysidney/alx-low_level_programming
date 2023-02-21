@@ -4,7 +4,6 @@
  * _putchar - prints the alphabets putchar
  * Return: Always 0
  */
-
 int main(void)
 {
 	_putchar('_');
