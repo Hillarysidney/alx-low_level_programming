@@ -10,15 +10,13 @@
  */
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
-	int h, count = 0;
-	unsigned long int present;
-	unsigned long int exclusive = n ^ m;
+	unsigned int fbits;
 
-	for (h = 63; h >= 0; h--)
+	for (fbits = 0; n || m; n >>= 1, m >>= 1)
 	{
-		present = exclusive >> 1;
-		if (present & 1)
-			count++;
+		if ((n & 1) != (m & 1))
+			fbits++;
 	}
-	return (count);
+
+	return (fbits);
 }
